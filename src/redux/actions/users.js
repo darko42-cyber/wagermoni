@@ -13,3 +13,16 @@ export const loadUser = () => async (dispatch) => {
     });
   }
 };
+export const loginUser = (formData) => async (dispatch) => {
+  dispatch({ type: "LoginUserRequest" });
+
+  try {
+    const { data } = await axiosInstance.post("/users/login", formData);
+    dispatch({ type: "LoginUserSuccess", payload: data });
+  } catch (error) {
+    dispatch({
+      type: "LoginUserFailure",
+      payload: error.response.data.message,
+    });
+  }
+};

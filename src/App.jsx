@@ -19,35 +19,39 @@ import InvestmentPage from "./pages/investment/InvestmentPage";
 import RiskPage from "./pages/risk/RiskPage";
 import AboutPage from "./pages/about/AboutPage";
 import Footer from "./components/layout/Footer";
-
+import Spinner from "./components/layout/Spinner";
 const App = () => {
+  const { loading } = useSelector((state) => state.predictions);
   useEffect(() => {
     Store.dispatch(getAllPredictions());
     Store.dispatch(loadUser());
   }, []);
 
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/investment" element={<InvestmentPage />} />
-        <Route path="/risk" element={<RiskPage />} />
-        <Route path="/about" element={<AboutPage />} />
+    <>
+      {loading && <Spinner />}
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/investment" element={<InvestmentPage />} />
+          <Route path="/risk" element={<RiskPage />} />
+          <Route path="/about" element={<AboutPage />} />
 
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <Admin />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-      <Footer />
-    </Router>
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
   );
 };
 

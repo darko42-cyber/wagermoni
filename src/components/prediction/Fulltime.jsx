@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { fullTime } from "../../../data/prediction";
+
 import PredictCard from "./PredictCard";
 import { useSelector } from "react-redux";
 
@@ -59,7 +59,7 @@ const Fulltime = () => {
 
   useEffect(() => {
     if (predictions) {
-      let filteredData = predictions.filter((p) => p.gameType === "Fulltime");
+      let filteredData = predictions.filter((p) => p.gameType === "fulltime");
       setfullTime(filteredData);
     }
   }, [predictions]);

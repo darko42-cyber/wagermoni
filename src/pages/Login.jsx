@@ -15,9 +15,9 @@ const Login = () => {
     try {
       const res = await LoginUser({ email, password });
       if (res.success) {
-        message.success(res.message);
         localStorage.setItem("token", res.data);
         navigate("/");
+        window.location.reload();
       } else {
         throw new Error(res.message);
       }
@@ -25,11 +25,11 @@ const Login = () => {
       message.error(error.message);
     }
   };
-  // useEffect(() => {
-  //   if (isAuthenticated) {
-  //     navigate("/");
-  //   }
-  // }, [isAuthenticated, navigate]);
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
   return (
     <form
       className="p-10 border-sm bg-slate-200 text-white flex items-center justify-center h-screen w-full"

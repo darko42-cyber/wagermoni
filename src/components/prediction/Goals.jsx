@@ -35,25 +35,25 @@ const Goals = () => {
       setUnsetledCheck(false);
       setLossCheck(false);
       let filteredData;
-      filteredData = predictions.filter((p) => p.gameType === "goal");
+      filteredData = predictions.filter((p) => p.gameType === "Goal");
       filteredData = filteredData.filter((d) => d.result === e.target.value);
       setGoals(filteredData);
     } else {
-      setGoals(predictions.filter((p) => p.gameType === "goal"));
+      setGoals(predictions.filter((p) => p.gameType === "Goal"));
     }
   };
   const handleLossChange = (e) => {
     setLossCheck(!lossCheck);
     if (e.target.checked) {
       let filteredData;
-      filteredData = predictions.filter((p) => p.gameType === "goal");
+      filteredData = predictions.filter((p) => p.gameType === "Goal");
       filteredData = filteredData.filter((d) => d.result === e.target.value);
       setGoals(filteredData);
       console.log(filteredData);
       setUnsetledCheck(false);
       setWonCheck(false);
     } else {
-      setGoals(predictions.filter((p) => p.gameType === "goal"));
+      setGoals(predictions.filter((p) => p.gameType === "Goal"));
     }
   };
 
