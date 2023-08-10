@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+html {
+  font-family: monospace;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+i {
+  font-size: 20px;
+}
+
+.code-card:hover .card-icons {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* .showmenu {
+  z-index: 9999 !important;
+} */
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.showMenu {
+  transform-origin: center;
+  transition: all 0.5s ease;
+}
+input[type="text"],
+input[type="time"],
+select {
+  width: 90% !important;
+}
+
+button {
+  letter-spacing: 1px;
+}
+button:hover {
+  letter-spacing: 1px;
+}
+label {
+  color: #666 !important;
+  font-weight: bold;
+}
+input::placeholder {
+  letter-spacing: 1px;
+  font-family: monospace;
+}
+
+.commentTextBox {
+  resize: none !important;
+}
+
+.hrBorder {
+  border: 0.15px solid rgb(243, 241, 241) !important;
+}
