@@ -58,7 +58,7 @@ a {
 input[type="text"],
 input[type="time"],
 select {
-  width: 90% !important;
+  width: 100% !important;
 }
 
 button {

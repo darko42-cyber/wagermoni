@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Button, Modal, message } from "antd";
-import React, { useEffect, useRef, useState } from "react";
+import { Modal } from "antd";
+import React, { useEffect, useRef } from "react";
 import CommentsCard from "./CommentsCard";
 import CommentsForm from "./CommentsForm";
-import { getComments } from "../../../api/comment";
 
 const PredictionComments = ({
   openComments,
@@ -13,31 +12,34 @@ const PredictionComments = ({
   setComments,
   predictionComments,
 }) => {
-  console.log(comments);
+  const scroll = useRef();
+
+  useEffect(() => {
+    scroll.current.scrollIntoView();
+  }, []);
   return (
     <div>
       <Modal
         open={openComments}
         onCancel={() => setOpenComments(false)}
-        footer={
-          [
-            // <Button key="submit" type="primary">
-            //   Comment
-            // </Button>,
-          ]
-        }
+        footer={null}
         bodyStyle={{
           width: "100%",
         }}
+        centered
       >
         <h2 className="mb-10 text-center text-gray-600">Comments</h2>
-        <div className="overflow-y-auto max-h-[50vh] mb-5 w-full">
+        <div className="overflow-y-auto max-h-[40vh] mb-5 w-full" ref={scroll}>
           {comments?.map((comment) => (
             <CommentsCard key={comment._id} comment={comment} />
           ))}
         </div>
         <div>
-          <CommentsForm data={data} predictionComments={predictionComments} />
+          <CommentsForm
+            data={data}
+            predictionComments={predictionComments}
+            scroll={scroll}
+          />
         </div>
       </Modal>
     </div>

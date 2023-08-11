@@ -16,8 +16,7 @@ const Login = () => {
       const res = await LoginUser({ email, password });
       if (res.success) {
         message.success(res.message);
-        localStorage.setItem("token", res.data);
-        window.location.reload();
+        navigate("/");
       } else {
         throw new Error(res.message);
       }
@@ -32,10 +31,10 @@ const Login = () => {
   }, [isAuthenticated, navigate]);
   return (
     <form
-      className=" border-sm bg-slate-200 text-white flex items-center justify-center h-screen w-full"
+      className="p-10 border-sm bg-slate-200 text-white flex items-center justify-center h-screen w-full"
       onSubmit={handleSubmit}
     >
-      <div className="w-full p-5 bg-white shadow-[0px_3px_3px_rgba(0,0,0,0.3)] text-black max-w-lg">
+      <div className="w-full p-5 bg-white shadow-[0px_3px_3px_rgba(0,0,0,0.3)] text-black max-w-md">
         <Link to="/register">
           <h2 className="text-center p-5 text-2xl  text-gray-500">
             Login <i className="ri-login-box-line"></i>{" "}
@@ -47,7 +46,7 @@ const Login = () => {
             <label className="block py-2"> Email</label>
             <input
               type="email"
-              className="border-none outline-none p-2 h-10 placeholder:tracking-widerst"
+              className="border border-solid border-gray-300 outline-none p-2 h-10 placeholder:tracking-widerst "
               aria-required
               placeholder="Enter your email"
               onChange={(e) => setEmail(e.target.value)}
@@ -58,17 +57,27 @@ const Login = () => {
             <input
               type="password"
               placeholder="Enter your password"
-              className="border-none outline-none p-2 h-10 placeholder::tracking-widerst"
+              className="outline-none border border-solid border-gray-300 p-2 h-10  placeholder::tracking-widerst"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
           <button
             type="submit"
-            className="p-2 w-full rounded-xl mt-5 text-white border-none outline-none bg-[#5c449e] cursor-pointer"
+            className="p-2 w-full rounded-xl mt-5 text-white border-none outline-none bg-primary cursor-pointer"
           >
             Submit
           </button>
+          <span className="text-gray-700">
+            {" "}
+            {"Don't"} have an account ?{" "}
+            <Link to="/register">
+              {" "}
+              <small className="underline underline-offset-4 text-primary">
+                Sign Up
+              </small>{" "}
+            </Link>{" "}
+          </span>
         </div>
       </div>
     </form>

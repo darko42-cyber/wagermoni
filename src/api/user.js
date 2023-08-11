@@ -8,3 +8,12 @@ export const LoginUser = async (data) => {
     return error.response.data.message;
   }
 };
+
+export const RegisterUser = async (data) => {
+  try {
+    const res = await axiosInstance.post("/users/register", data);
+    return res.data;
+  } catch (error) {
+    return error.response.data.message;
+  }
+};
