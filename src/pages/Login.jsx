@@ -16,7 +16,8 @@ const Login = () => {
       const res = await LoginUser({ email, password });
       if (res.success) {
         message.success(res.message);
-        navigate("/");
+        localStorage.setItem("token", res.data);
+        window.location.reload();
       } else {
         throw new Error(res.message);
       }
