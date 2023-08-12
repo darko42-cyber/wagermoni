@@ -25,11 +25,11 @@ const Login = () => {
       message.error(error.message);
     }
   };
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate("/");
-    }
-  }, [isAuthenticated, navigate]);
+  // useEffect(() => {
+  //   if (isAuthenticated) {
+  //     navigate("/");
+  //   }
+  // }, [isAuthenticated, navigate]);
   return (
     <form
       className="p-10 border-sm bg-slate-200 text-white flex items-center justify-center h-screen w-full"
