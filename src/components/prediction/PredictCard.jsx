@@ -139,7 +139,7 @@ const PredictCard = ({ p }) => {
                 {" "}
                 <i
                   className="ri-eye-line block cursor-pointer"
-                  onClick={() => setOpenDetails(true)}
+                  onClick={() => setOpenDetails("")}
                 ></i>{" "}
               </span>{" "}
             </b>
