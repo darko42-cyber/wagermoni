@@ -105,7 +105,7 @@ const PredictCard = ({ p }) => {
 
   return (
     <div
-      className={`bg-[#023364] shadow-[0px_0px_20px_rgb(250,250,250)] ${
+      className={`bg-[#023364] shadow-[0px_0px_20px_rgb(250,250,250)] text-sm ${
         p.result === "won"
           ? "text-green-500"
           : p.result === "loss"

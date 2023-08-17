@@ -92,7 +92,7 @@ const Corners = () => {
             </div>
 
             <div className="flex gap-2 items-center">
-              <d className="w-[20px] h-[20px] bg-green-400 "></d>
+              <div className="w-[20px] h-[20px] bg-green-400 "></div>
               <span className="inline-block">Won</span>
               <input
                 type="checkbox"

@@ -66,7 +66,7 @@ const Goals = () => {
 
   return (
     <>
-      <div className="w-full flex flex-col  gap-2 my-3 sm:items-center">
+      <div className="w-full flex flex-col  gap-2 my-3 md:items-center">
         <div className="sm:text-center">
           <div className="flex items-center gap-2 font-mono">
             <div className="flex items-center gap-2 p-2">
@@ -81,7 +81,7 @@ const Goals = () => {
               />
             </div>
 
-            <div className="flex items-center gap-2 p-2">
+            <div className="flex items-center gap-2">
               <div className="w-[20px] h-[20px] bg-red-400 "></div>
               <span className="inline-block">Loss</span>
               <input
@@ -93,7 +93,7 @@ const Goals = () => {
               />
             </div>
 
-            <div className="flex items-center gap-2 p-2">
+            <div className="flex items-center gap-2">
               <div className="w-[20px] h-[20px] bg-green-400 "></div>
               <span className="inline-block">Won</span>
               <input
