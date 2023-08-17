@@ -4,12 +4,12 @@ import { Avatar } from "antd";
 import logo from "../../../public/images/logo1.png";
 const Footer = () => {
   return (
-    <footer className="bg-slate-300 h-full max-h-sm mt-10 p-5">
+    <footer className="bg-slate-200 h-full max-h-sm mt-10 p-5">
       <div className="flex flex-col gap-10 lg:gap-0 lg:flex lg:flex-row lg:justify-around">
         <section>
           <img src={logo} width={100} />
           <div className="flex flex-col">
-            <p className="max-w-sm w-full">
+            <p className="max-w-sm w-full text-gray-700">
               Constant victory is assured and you will have nothing to loose or
               fear when you sign up to any premium package or buy odds from us
             </p>
@@ -86,12 +86,12 @@ const Footer = () => {
         </section>
         <section className="flex flex-col gap-5">
           <h2 className="text-gray-700">Newsletter</h2>
-          <div className="max-w-sm w-full">
-            <p>
-              Be the first to receive update about our plans and new premium
-              features
-            </p>
-          </div>
+
+          <p className="max-w-sm w-full text-gray-700">
+            Be the first to receive update about our plans and new premium
+            features
+          </p>
+
           <div className="mt-5 border-solid border-black border rounded-lg p-1 flex items-center">
             <input
               type="text"
@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
         </section>
       </div>
-      <div className="flex items-center gap-2 p-3 justify-center">
+      <div className="flex items-center gap-2 p-3 justify-center text-gray-700">
         Copyright
         <b>
           <i className="ri-copyright-fill"></i>
@@ -111,7 +111,7 @@ const Footer = () => {
         <p>All rights reserved</p>
       </div>
 
-      <div className="flex items-center gap-2 p-3 justify-center">
+      <div className="flex items-center gap-2 p-3 justify-center text-gray-700">
         Developer
         <b>
           <big className="text-xl">@</big>Mr.Darko

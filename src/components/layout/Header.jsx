@@ -40,7 +40,7 @@ const Header = () => {
           type="primary"
           onClick={() => {
             localStorage.removeItem("token");
-            window.location.reload();
+            navigate("/login");
           }}
         >
           <Link to="/login" className="flex items-center">
@@ -137,7 +137,7 @@ const Header = () => {
             key="submit"
             type="primary"
             onClick={() => {
-              window.location.reload();
+              navigate("/login");
             }}
           >
             <Link to="/login" className="flex items-center">

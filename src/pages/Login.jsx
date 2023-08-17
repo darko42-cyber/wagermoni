@@ -17,7 +17,7 @@ const Login = () => {
       if (res.success) {
         message.success(res.message);
         localStorage.setItem("token", res.data);
-        window.location.reload();
+        navigate("/");
       } else {
         throw new Error(res.message);
       }
