@@ -20,6 +20,14 @@ export const league = [
     title: "Serie A",
     country: "Italy",
   },
+  {
+    title: "Europa League",
+    country: "Europe",
+  },
+  {
+    title: "Europa Conference",
+    country: "Europe",
+  },
 ];
 
 export const gameType = [
