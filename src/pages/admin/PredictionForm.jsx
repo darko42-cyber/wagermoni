@@ -86,10 +86,7 @@ const PredictionForm = ({
           overflowY: "scroll",
           marginTop: "25px",
         }}
-        onOk={() => {
-          formRef.current.submit();
-          // setSelectedPrediction(null);
-        }}
+        onOk={() => formRef.current.submit()}
         okButtonProps={{ style: { backgroundColor: "green" } }}
       >
         <div className="w-full">
