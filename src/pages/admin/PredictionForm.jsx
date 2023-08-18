@@ -88,7 +88,7 @@ const PredictionForm = ({
         }}
         onOk={() => {
           formRef.current.submit();
-          setSelectedPrediction(null);
+          // setSelectedPrediction(null);
         }}
         okButtonProps={{ style: { backgroundColor: "green" } }}
       >

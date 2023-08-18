@@ -1,6 +1,6 @@
 import axios from "axios";
 export const axiosInstance = axios.create({
-  baseURL: "https://wagermoni-api.onrender.com/api",
+  baseURL: "http://localhost:5000/api",
   headers: {
     authorization: `Bearer ${localStorage.getItem("token")}`,
   },
