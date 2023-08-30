@@ -103,10 +103,10 @@ const Footer = () => {
           </div>
         </section>
       </div>
-      <div className='flex  items-center gap-2 p-3 justify-center text-gray-700'>
+      <div className='flex text-sm items-center gap-2 p-3 justify-center text-gray-700'>
         Copyright
         <b>
-          <i className='ri-copyright-fill'></i>
+          <i className='ri-copyright-fill text-sm'></i>
           2018
         </b>{" "}
         <p>All rights reserved</p>
