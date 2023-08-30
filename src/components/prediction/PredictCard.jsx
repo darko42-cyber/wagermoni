@@ -162,7 +162,9 @@ const PredictCard = ({ p }) => {
       </p>
       <div className='font-bold max-sm:text-right pr-[2px] block col-span-3'>
         {" "}
-        {p.tip}{" "}
+        {p.gameType == "Fulltime"
+          ? p.tip + " FT"
+          : p.tip}{" "}
         <div>
           {isLiked ? (
             <span
