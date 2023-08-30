@@ -11,8 +11,8 @@ const Advert = () => {
         >
           whatsapp
           <div className='flex items-center justify-center'>
-            <i className='ri-whatsapp-line text-green-500'></i>
-            <span className='text-lg font-bold inline-block ml-1'>
+            <i className='ri-whatsapp-line text-green-500 text-sm'></i>
+            <span className='text-lg font-bold inline-block ml-1 underline'>
               0204079169
             </span>
           </div>
