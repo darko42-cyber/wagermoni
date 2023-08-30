@@ -105,11 +105,9 @@ const Footer = () => {
       </div>
       <div className='flex text-sm items-center gap-2 p-3 justify-center text-gray-700'>
         Copyright
-        <b>
-          <i className='ri-copyright-fill text-sm'></i>
-          2018
-        </b>{" "}
-        <p>All rights reserved</p>
+        <i className='ri-copyright-fill text-sm'></i>
+        2018
+        <span className='text-sm'>All rights reserved</span>
       </div>
 
       <div className='flex items-center gap-2 p-3 justify-center text-gray-700'>
