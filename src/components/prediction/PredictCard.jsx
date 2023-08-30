@@ -38,7 +38,9 @@ const PredictCard = ({ p }) => {
   };
   const predictionLikes = async () => {
     try {
-      const res = await likePrediction({ predictionId: p?._id });
+      const res = await likePrediction({
+        predictionId: p?._id,
+      });
       if (res.success) {
         message.success(res.message);
         getAllLikes();
@@ -52,7 +54,9 @@ const PredictCard = ({ p }) => {
 
   const predictionUnlikes = async () => {
     try {
-      const res = await unlikePrediction({ predictionId: p._id });
+      const res = await unlikePrediction({
+        predictionId: p._id,
+      });
       getAllLikes();
       if (res.success) {
         message.success(res.message);
@@ -88,10 +92,15 @@ const PredictCard = ({ p }) => {
   const ratingStar = (team) => {
     let star = [];
     for (let i = 1; i <= team; i++) {
-      star.push(<i className="ri-star-fill text-xs"></i>);
+      star.push(<i className='ri-star-fill text-xs'></i>);
       console.log(p.rating.home);
-      if (i === Math.floor(team) && Math.ceil(team) !== team) {
-        star.push(<i className="ri-star-half-fill text-xs"></i>);
+      if (
+        i === Math.floor(team) &&
+        Math.ceil(team) !== team
+      ) {
+        star.push(
+          <i className='ri-star-half-fill text-xs'></i>
+        );
       }
     }
     return star;
@@ -105,7 +114,7 @@ const PredictCard = ({ p }) => {
 
   return (
     <div
-      className={`bg-[#023364] shadow-[0px_0px_20px_rgb(250,250,250)] text-sm ${
+      className={`bg-[#023364] shadow-[0px_0px_10px_rgb(250,250,250)] text-sm ${
         p.result === "won"
           ? "text-green-500"
           : p.result === "loss"
@@ -113,46 +122,45 @@ const PredictCard = ({ p }) => {
           : "text-yellow-400"
       } text-center border border-red-500  place-items-center w-full md:w-[500px] lg:max-w-lg grid grid-cols-10 gap-1 py-3 font-mono relative`}
     >
-      <p className="col-span-3">
+      <p className='col-span-3'>
         {" "}
         {p.home}{" "}
-        <span className="whitespace-nowrap block col-span-2">
+        <span className='whitespace-nowrap block col-span-2'>
           {ratingStar(p?.rating?.home)}
         </span>{" "}
       </p>
-      <p className="text-white col-span-1">
+      <p className='text-white col-span-1'>
         <>
           {p.result === "won" ? (
-            <span className="block">
-              <i className="ri-checkbox-circle-fill text-green-500 text-[20px] block"></i>
-              <i className="ri-eye-line text-green-500 text-[20px] block"></i>
+            <span className='block'>
+              <i className='ri-checkbox-circle-fill text-green-500 text-[20px] block text-sm'></i>
+              <i className='ri-eye-line text-green-500 text-[20px] block text-sm'></i>
             </span>
           ) : p.result === "loss" ? (
             <span>
-              <i className="ri-close-circle-fill text-red-400 text-[20px] block"></i>
-              <i className="ri-eye-line text-red-400  text-[20px] block"></i>
+              <i className='ri-close-circle-fill text-red-400 text-[20px] block text-sm'></i>
+              <i className='ri-eye-line text-red-400  text-[20px] block text-sm'></i>
             </span>
           ) : (
-            <b className="text-yellow-400 ">
-              VS{" "}
-              <span>
-                {" "}
-                <i
-                  className="ri-eye-line block cursor-pointer"
-                  onClick={() => setOpenDetails("")}
-                ></i>{" "}
-              </span>{" "}
+            <b className='text-yellow-400 '>
+              vs{" "}
+              <i
+                className='ri-eye-line block cursor-pointer text-sm'
+                onClick={() => setOpenDetails("")}
+              ></i>{" "}
             </b>
           )}
         </>
       </p>
 
-      <p className="col-span-3">
+      <p className='col-span-3'>
         {" "}
         {p.away}
-        <span className="block">{ratingStar(p?.rating?.away)}</span>{" "}
+        <span className='block'>
+          {ratingStar(p?.rating?.away)}
+        </span>{" "}
       </p>
-      <div className="font-bold max-sm:text-right pr-[2px] block col-span-3">
+      <div className='font-bold max-sm:text-right pr-[2px] block col-span-3'>
         {" "}
         {p.tip}{" "}
         <div>
@@ -163,7 +171,7 @@ const PredictCard = ({ p }) => {
               }}
             >
               {" "}
-              <i className="ri-thumb-up-fill text-sm cursor-pointer">
+              <i className='ri-thumb-up-fill text-sm cursor-pointer'>
                 {" "}
                 {likes.length}{" "}
               </i>
@@ -175,7 +183,7 @@ const PredictCard = ({ p }) => {
               }}
             >
               {" "}
-              <i className="ri-thumb-up-line text-sm cursor-pointer">
+              <i className='ri-thumb-up-line text-sm cursor-pointer'>
                 {" "}
                 {likes?.length}{" "}
               </i>
@@ -185,7 +193,7 @@ const PredictCard = ({ p }) => {
           <span>
             {" "}
             <i
-              className="ri-message-2-line text-sm cursor-pointer"
+              className='ri-message-2-line text-sm cursor-pointer'
               onClick={() => setOpenComments(true)}
             >
               {comments?.length}

@@ -28,10 +28,18 @@ const PredictionComments = ({
         }}
         centered
       >
-        <h2 className="mb-10 text-center text-gray-600">Comments</h2>
-        <div className="overflow-y-auto max-h-[40vh] mb-5 w-full" ref={scroll}>
+        <h2 className='mb-10 text-center text-gray-600'>
+          Comments
+        </h2>
+        <div
+          className='overflow-y-auto max-h-[22vh] mb-5 w-full'
+          ref={scroll}
+        >
           {comments?.map((comment) => (
-            <CommentsCard key={comment._id} comment={comment} />
+            <CommentsCard
+              key={comment._id}
+              comment={comment}
+            />
           ))}
         </div>
         <div>
