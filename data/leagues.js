@@ -28,6 +28,46 @@ export const league = [
     title: "Europa Conference",
     country: "Europe",
   },
+  {
+    title: "Netherlands-Eredivisie",
+    country: "Netherlands",
+  },
+  {
+    title: "Liga Portugal",
+    country: "Portugal",
+  },
+  {
+    title: "Serbia - Super Liga",
+    country: "Serbia",
+  },
+  {
+    title: "Slovakia - Super Liga",
+    country: "Slovakia",
+  },
+  {
+    title: "Ukraine - Premier league",
+    country: "Ukraine",
+  },
+  {
+    title: "Wales - Premier league",
+    country: "Wales",
+  },
+  {
+    title: "Saudi Professional League",
+    country: "Saudi Arabia",
+  },
+  {
+    title: "Greece - Super League",
+    country: "Greece",
+  },
+  {
+    title: "Hungry - NB I",
+    country: "Hungary",
+  },
+  {
+    title: "Scotland - Premiership",
+    country: "Scotland",
+  },
 ];
 
 export const gameType = [
