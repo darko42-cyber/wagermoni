@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import PredictCard from "./PredictCard";
-import {corners} from "./data";
+import {corners} from "/data";
 import { useSelector } from "react-redux";
 
 const Corners = () => {
