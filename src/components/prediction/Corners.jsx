@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 import PredictCard from "./PredictCard";
+import {corners} from "./data";
 import { useSelector } from "react-redux";
 
 const Corners = () => {
-  const { predictions } = useSelector((state) => state.predictions);
+  const [predictions,setPredictions]= useState(corners)
   const [corners, setCorners] = useState([]);
   const [unsettled, setUnsettled] = useState("unsettled");
   const [loss, setLoss] = useState("loss");
@@ -57,10 +58,7 @@ const Corners = () => {
   };
 
   useEffect(() => {
-    if (predictions) {
-      let filteredData = predictions.filter((p) => p.gameType === "Corner");
-      setCorners(filteredData);
-    }
+    setPredictions(corners)
   }, [predictions]);
   return (
     <>
